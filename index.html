@@ -295,16 +295,16 @@ async function syncCloudNow(){
 
 
 const sources=[
- {name:'考研数学大纲.pdf',meta:'2021版数学考试大纲 · 供数学一结构与范围校准',status:'已纳入框架',warn:false,group:'考试大纲',path:'sources/考研数学大纲.pdf'},
- {name:'必背公式高数篇.pdf',meta:'32页 · 级数、微分方程、空间解析几何、多元积分等',status:'已纳入首版卡片',warn:false,group:'公式资料',path:'sources/必背公式高数篇.pdf'},
- {name:'线代必备十页纸.pdf',meta:'11页 · 行列式、伴随、逆、二次型、正定等',status:'已纳入首版卡片',warn:false,group:'公式资料',path:'sources/线代必备十页纸.pdf'},
- {name:'概率必备八页纸.pdf',meta:'9页 · 概率、独立、分布、数字特征、估计与检验',status:'已纳入首版卡片',warn:false,group:'公式资料',path:'sources/概率必备八页纸.pdf'},
- {name:'1987-2009年考研数学一真题.pdf',meta:'72页 · 1987—2009真题汇总',status:'已载入可识别题目',warn:false,group:'历年真题',path:'sources/1987-2009年考研数学一真题.pdf'},
- {name:'2010-2019年考研数学一真题.pdf',meta:'40页 · 2010—2019真题汇总',status:'已载入可识别题目',warn:false,group:'历年真题',path:'sources/2010-2019年考研数学一真题.pdf'},
- {name:'2020年考研数学（一）真题.pdf',meta:'4页 · 数学一真题',status:'已载入可识别题目',warn:false,group:'历年真题',path:'sources/2020年考研数学（一）真题.pdf'},
- {name:'2021年考研数学（一）真题.pdf',meta:'4页 · 数学一真题',status:'已载入可识别题目',warn:false,group:'历年真题',path:'sources/2021年考研数学（一）真题.pdf'},
- {name:'2022年考研数学（一）真题.pdf',meta:'4页 · 当前 PDF 文字层不可可靠提取',status:'待结构化解析',warn:true,group:'历年真题',path:'sources/2022年考研数学（一）真题.pdf'},
- {name:'2025年考研数学一真题.pdf',meta:'9页 · 含题目与答案/解析页面',status:'已载入可识别题目',warn:false,group:'历年真题',path:'sources/2025年考研数学一真题.pdf'}
+ {group:'考试大纲',name:'考研数学大纲.pdf',meta:'2021版数学考试大纲 · 供数学一结构与范围校准',status:'已纳入框架',warn:false},
+ {group:'三科必背资料',name:'必背公式高数篇.pdf',meta:'32页 · 级数、微分方程、空间解析几何、多元积分等',status:'已纳入首版卡片',warn:false,url:'https://www.scribd.com/document/1060782808/777%E9%AB%98%E6%95%B0%E5%BF%85%E8%83%8C%E5%85%AC%E5%BC%8F'},
+ {group:'三科必背资料',name:'线代必备十页纸.pdf',meta:'11页 · 行列式、伴随、逆、二次型、正定等',status:'已纳入首版卡片',warn:false},
+ {group:'三科必背资料',name:'概率必备八页纸.pdf',meta:'9页 · 概率、独立、分布、数字特征、估计与检验',status:'已纳入首版卡片',warn:false},
+ {group:'历年真题',name:'1987-2009年考研数学一真题.pdf',meta:'72页 · 1987—2009真题汇总',status:'已载入可识别题目',warn:false,url:'https://max.book118.com/html/2024/0102/7014106142006024.shtm'},
+ {group:'历年真题',name:'2010-2019年考研数学一真题.pdf',meta:'40页 · 2010—2019真题汇总',status:'已载入可识别题目',warn:false,url:'https://www.scribd.com/document/963789841/%E5%90%88%E9%9B%86-2010-2019%E5%B9%B4%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E4%B8%80%E7%9C%9F%E9%A2%98'},
+ {group:'历年真题',name:'2020年考研数学（一）真题.pdf',meta:'4页 · 数学一真题',status:'已载入可识别题目',warn:false,url:'https://www.eduego.com/fqrz/shiti/6915.html'},
+ {group:'历年真题',name:'2021年考研数学（一）真题.pdf',meta:'4页 · 数学一真题',status:'已载入可识别题目',warn:false,url:'https://kaoyan.xdf.cn/202012/11139880.html'},
+ {group:'历年真题',name:'2022年考研数学（一）真题.pdf',meta:'4页 · 当前 PDF 文字层不可可靠提取',status:'待结构化解析',warn:true,url:'https://kaoyan.xdf.cn/202310/13540287.html'},
+ {group:'历年真题',name:'2025年考研数学一真题.pdf',meta:'9页 · 含题目与答案/解析页面',status:'已载入可识别题目',warn:false,url:'https://kaoyan.koolearn.com/20250103/1795517.html'}
 ];
 
 const baseCards=[
@@ -455,7 +455,10 @@ function showQuestion(id){go('questions');setTimeout(()=>{const e=document.getEl
 function renderSources(){
  const g=document.getElementById('sourceGrid');
  const groups=[...new Set(sources.map(s=>s.group))];
- g.innerHTML=groups.map(group=>{const items=sources.filter(s=>s.group===group);return `<div class="sourcegroup" style="grid-column:1/-1"><div style="display:flex;align-items:center;gap:8px;margin:6px 0 2px"><span class="badge">${escapeHtml(group)}</span><span class="tiny">${items.length} 份</span></div><div class="sourcegrid" style="margin-top:10px">${items.map(s=>`<div class="source ${s.warn?'warn':''}"><span class="status">${escapeHtml(s.status)}</span><h3>${escapeHtml(s.name)}</h3><div class="snippet">${escapeHtml(s.meta)}</div><div class="sourceactions"><a class="sourcebtn primary" href="${encodeURI(s.path)}" target="_blank" rel="noopener">查看源文件</a><a class="sourcebtn" href="https://github.com/ciweiy717/kaoyan-math-memory/blob/main/${encodeURI(s.path)}" target="_blank" rel="noopener">GitHub 文件页</a></div><div class="sourcehint">源文件同步到网站后，可直接在浏览器新标签页打开。</div></div>`).join('')}</div></div>`}).join('')
+ g.innerHTML=groups.map(group=>{
+   const items=sources.filter(s=>s.group===group);
+   return `<div class="sourcegroup" style="grid-column:1/-1"><div style="display:flex;align-items:center;gap:8px;margin:6px 0 2px"><span class="badge">${escapeHtml(group)}</span><span class="tiny">${items.length} 份</span></div><div class="sourcegrid" style="margin-top:10px">${items.map(s=>{const actions=s.url?`<div class="sourceactions"><a class="sourcebtn primary" href="${encodeURI(s.url)}" target="_blank" rel="noopener">查看源资料</a></div>`:`<div class="sourceactions"><span class="sourcebtn disabled">源文件待托管</span></div>`;return `<div class="source ${s.warn?'warn':''}"><span class="status">${escapeHtml(s.status)}</span><h3>${escapeHtml(s.name)}</h3><div class="snippet">${escapeHtml(s.meta)}</div>${actions}<div class="sourcehint">公开链接仅在已确认可访问时提供；未托管的原始 PDF 不放失效链接。</div></div>`}).join('')}</div></div>`
+ }).join('')
 }
 function exportJSON(){const payload={cards:baseCards,questions,progress,target,exportedAt:new Date().toISOString()};document.getElementById('jsonArea').value=JSON.stringify(payload,null,2);toast('已把当前数据写入文本框')}
 function importJSON(){try{
