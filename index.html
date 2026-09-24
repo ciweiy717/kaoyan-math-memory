@@ -29,8 +29,14 @@ main{max-width:1180px;margin:auto;padding:26px 18px 70px}.hero{display:grid;grid
 .question{border:1px solid var(--line);border-radius:18px;padding:16px;background:#fff}.question + .question{margin-top:12px}.qtop{display:flex;align-items:center;justify-content:space-between;gap:8px}.year{font-weight:850}.qtitle{font-weight:750;margin:9px 0}.analysis{padding:12px 13px;background:#f7f8fc;border-radius:12px;color:#525f74;line-height:1.72;font-size:14px;margin-top:10px}.analysis b{color:#203252}.answer{font-size:12px;color:#51607a;margin-top:7px}
 .sourcegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.source{border:1px solid var(--line);border-radius:16px;padding:15px;background:#fff}.source h3{font-size:15px;margin:8px 0}.source .status{font-size:11px;padding:4px 8px;border-radius:999px;background:#eef3ff;color:#4059ad;display:inline-block}.source.warn .status{background:#fff6df;color:#9d6913}
 .settings{display:grid;grid-template-columns:1fr 1fr;gap:16px}.settingblock{border:1px solid var(--line);border-radius:18px;padding:16px}.range{width:100%}.jsonarea{width:100%;min-height:220px;border:1px solid var(--line);border-radius:12px;padding:11px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+
+.accountbtn{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#fff;padding:9px 12px;border-radius:11px;font-size:12px;white-space:nowrap}.accountbtn:hover{background:rgba(255,255,255,.1)}
+.modalback{position:fixed;inset:0;background:rgba(7,13,26,.58);display:none;align-items:center;justify-content:center;padding:18px;z-index:120;backdrop-filter:blur(8px)}.modalback.show{display:flex}.modal{width:min(430px,100%);background:#fff;border-radius:22px;padding:22px;box-shadow:0 24px 70px rgba(0,0,0,.22)}.modal h2{margin:0 0 6px;font-size:22px}.modal .sub{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:16px}.modal .field{display:flex;flex-direction:column;gap:6px;margin-top:10px}.modal label{font-size:12px;color:#5e6b81}.modal .authrow{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}.modal .authrow.single{grid-template-columns:1fr}.modal .divider{display:flex;align-items:center;gap:8px;margin:16px 0;color:#98a2b2;font-size:12px}.modal .divider:before,.modal .divider:after{content:'';height:1px;background:var(--line);flex:1}.modal .status{margin-top:12px;padding:10px 12px;border-radius:11px;background:#f5f7fb;color:#526078;font-size:12px;line-height:1.55}.modal .closex{float:right;border:0;background:none;color:#7a879e;font-size:22px;line-height:1;padding:2px 4px}
+@media(max-width:600px){.accountbtn{padding:8px 9px}.nav{gap:7px}.modal{padding:18px}}
 .toast{position:fixed;right:18px;bottom:18px;background:#0d1526;color:#fff;padding:12px 15px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(8px);pointer-events:none;transition:.22s;z-index:99}.toast.show{opacity:1;transform:translateY(0)}
 .empty{padding:40px 10px;text-align:center;color:var(--muted)}
+.paper-img{display:block;width:100%;max-height:430px;object-fit:contain;background:#fff;border:1px solid #e6eaf2;border-radius:16px;box-shadow:0 8px 24px rgba(24,39,72,.07);cursor:zoom-in;margin:12px 0 10px}.paper-img:hover{box-shadow:0 12px 30px rgba(24,39,72,.11);transform:translateY(-1px)}.paper-tip{font-size:11px;color:#8994a7;text-align:center;margin-top:5px}.image-modal{position:fixed;inset:0;background:rgba(8,14,28,.82);display:none;align-items:center;justify-content:center;padding:18px;z-index:180;backdrop-filter:blur(8px)}.image-modal.show{display:flex}.image-modal img{max-width:min(1100px,96vw);max-height:92vh;width:auto;height:auto;object-fit:contain;background:#fff;border-radius:14px;box-shadow:0 30px 90px rgba(0,0,0,.4);cursor:zoom-out}.image-close{position:fixed;right:18px;top:14px;width:42px;height:42px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:28px;line-height:1}.image-caption{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);color:#fff;background:rgba(0,0,0,.42);padding:7px 12px;border-radius:999px;font-size:12px;max-width:90vw;text-align:center}
+
 @media(max-width:900px){.hero,.grid2,.flash-wrap,.settings{grid-template-columns:1fr}.sourcegrid{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr}.kpirow{grid-template-columns:repeat(2,1fr)}.navlinks{overflow:auto}.datechip{display:none}}
 @media(max-width:600px){main{padding:18px 12px 60px}.nav{padding:0 11px;height:61px}.brand{font-size:14px}.navlinks{margin-left:3px}.navbtn{padding:9px 10px;font-size:13px}.hero-card{padding:22px}.hero h1{font-size:28px}.formula{font-size:22px}.answerbar{grid-template-columns:1fr}.sourcegrid{grid-template-columns:1fr}.kpirow{grid-template-columns:1fr 1fr}.panel{padding:15px}.flashcard{padding:18px}}
 </style>
@@ -47,6 +53,7 @@ main{max-width:1180px;margin:auto;padding:26px 18px 70px}.hero{display:grid;grid
     <button class="navbtn" data-go="settings">设置</button>
   </div>
   <div class="datechip" id="todayLabel"></div>
+  <button class="accountbtn" id="accountBtn" onclick="openAuth()">登录 / 云同步</button>
 </nav></header>
 <main>
 <section id="dashboard" class="section active">
@@ -137,11 +144,156 @@ main{max-width:1180px;margin:auto;padding:26px 18px 70px}.hero{display:grid;grid
   </div>
 </section>
 </main>
+<div id="authModal" class="modalback" onclick="if(event.target===this)closeAuth()">
+  <div class="modal">
+    <button class="closex" onclick="closeAuth()">×</button>
+    <h2>登录「研数记忆」</h2>
+    <div class="sub">登录后，你的复习进度会保存到云端。换手机、换电脑，登录同一个账号即可继续学习。</div>
+    <div class="field"><label>邮箱</label><input id="authEmail" class="input" type="email" placeholder="例如 123@example.com" autocomplete="email"></div>
+    <div class="field"><label>密码</label><input id="authPassword" class="input" type="password" placeholder="至少 6 位" autocomplete="current-password"></div>
+    <div class="authrow"><button class="primary" onclick="emailLogin()">登录</button><button class="secondary" onclick="emailRegister()">注册</button></div>
+    <div class="divider">或使用第三方账号</div>
+    <div class="authrow"><button class="secondary" onclick="googleLogin()">Google 登录</button><button class="secondary" onclick="qqLogin()">QQ 登录</button></div>
+    <div id="authStatus" class="status">当前：未登录。本机仍可继续使用，但进度只保存在当前浏览器。</div>
+    <div class="authrow single" style="margin-top:12px"><button class="ghost" style="color:#1d2a45;border-color:var(--line);background:#fff" onclick="logoutAccount()">退出当前账号</button></div>
+  </div>
+</div>
+
+<div id="imageModal" class="image-modal" onclick="closeImageModal()">
+  <button class="image-close" onclick="event.stopPropagation();closeImageModal()">×</button>
+  <img id="imageModalImg" alt="放大查看" onclick="event.stopPropagation()">
+  <div id="imageCaption" class="image-caption">点击任意位置关闭</div>
+</div>
 <div id="toast" class="toast"></div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const DAY=86400000;
 const intervals=[0,1,2,4,7,15,30];
+const SUPABASE_URL='YOUR_SUPABASE_URL';
+const SUPABASE_ANON_KEY='YOUR_SUPABASE_ANON_KEY';
+const ENABLE_QQ=false; // QQ 需要在 Supabase 配置自定义 OAuth/OIDC 后改为 true。
+let supabaseClient=null;
+let currentUser=null;
+let cloudConfigured=false;
+let cloudSyncTimer=null;
+
+function cloudState(){
+  const custom=JSON.parse(localStorage.getItem(CUSTOM_STORE)||'{"cards":[],"questions":[]}');
+  return {
+    user_id:currentUser?.id,
+    progress,
+    target,
+    custom_cards:Array.isArray(custom.cards)?custom.cards:[],
+    custom_questions:Array.isArray(custom.questions)?custom.questions:[],
+    daily_done:Number(localStorage.getItem('km_done_'+dateKey(today()))||0),
+    updated_at:new Date().toISOString()
+  };
+}
+function setAuthStatus(msg){const e=document.getElementById('authStatus');if(e)e.textContent=msg}
+function updateAccountUI(){
+  const b=document.getElementById('accountBtn');
+  if(!b)return;
+  if(currentUser){const mail=currentUser.email||'已登录';b.textContent='已登录 · '+(mail.length>18?mail.slice(0,17)+'…':mail);b.onclick=()=>openAuth();setAuthStatus('当前账号：'+mail+'。复习进度会自动云同步。');}
+  else{b.textContent='登录 / 云同步';b.onclick=openAuth;setAuthStatus('当前：未登录。本机仍可继续使用，但进度只保存在当前浏览器。')}
+}
+async function initCloud(){
+  cloudConfigured=SUPABASE_URL.startsWith('https://') && SUPABASE_ANON_KEY && !SUPABASE_URL.includes('YOUR_') && !SUPABASE_ANON_KEY.includes('YOUR_');
+  if(!cloudConfigured){updateAccountUI();return;}
+  try{
+    supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+    const {data}=await supabaseClient.auth.getSession();
+    currentUser=data?.session?.user||null;
+    updateAccountUI();
+    if(currentUser) await loadCloudState();
+    supabaseClient.auth.onAuthStateChange((event,session)=>{
+      currentUser=session?.user||null;updateAccountUI();
+      if(event==='SIGNED_IN' && currentUser) setTimeout(()=>loadCloudState(),0);
+      if(event==='SIGNED_OUT') currentUser=null;
+    });
+  }catch(e){console.error(e);setAuthStatus('云同步初始化失败：'+(e.message||e))}
+}
+function openAuth(){document.getElementById('authModal').classList.add('show');updateAccountUI()}
+function closeAuth(){document.getElementById('authModal').classList.remove('show')}
+async function emailLogin(){
+  if(!cloudConfigured)return setAuthStatus('请先把代码里的 SUPABASE_URL 和 SUPABASE_ANON_KEY 填好。');
+  const email=document.getElementById('authEmail').value.trim(),password=document.getElementById('authPassword').value;
+  if(!email||!password)return setAuthStatus('请输入邮箱和密码。');
+  setAuthStatus('正在登录…');
+  const {error}=await supabaseClient.auth.signInWithPassword({email,password});
+  if(error)setAuthStatus('登录失败：'+error.message);else{setAuthStatus('登录成功，正在同步…');closeAuth();toast('登录成功，正在同步你的学习进度');}
+}
+async function emailRegister(){
+  if(!cloudConfigured)return setAuthStatus('请先把代码里的 SUPABASE_URL 和 SUPABASE_ANON_KEY 填好。');
+  const email=document.getElementById('authEmail').value.trim(),password=document.getElementById('authPassword').value;
+  if(!email||password.length<6)return setAuthStatus('请输入邮箱，并设置至少 6 位密码。');
+  setAuthStatus('正在注册…');
+  const {data,error}=await supabaseClient.auth.signUp({email,password});
+  if(error)setAuthStatus('注册失败：'+error.message);else if(data?.session){closeAuth();toast('注册成功，正在同步你的学习进度');}else setAuthStatus('注册成功！请先到邮箱完成验证，再回来登录。');
+}
+async function googleLogin(){
+  if(!cloudConfigured)return setAuthStatus('请先把代码里的 Supabase 配置填好。');
+  setAuthStatus('正在跳转 Google…');
+  const {error}=await supabaseClient.auth.signInWithOAuth({provider:'google',options:{redirectTo:window.location.href}});
+  if(error)setAuthStatus('Google 登录失败：'+error.message);
+}
+async function qqLogin(){
+  if(!cloudConfigured)return setAuthStatus('请先把代码里的 Supabase 配置填好。');
+  if(!ENABLE_QQ)return setAuthStatus('QQ 登录入口已预留，但还需要在 Supabase 里配置 QQ 的自定义 OAuth/OIDC，并申请 QQ 互联应用凭据。邮箱登录和 Google 登录可以先直接使用。');
+  setAuthStatus('正在跳转 QQ…');
+  const {error}=await supabaseClient.auth.signInWithOAuth({provider:'custom:qq',options:{redirectTo:window.location.href}});
+  if(error)setAuthStatus('QQ 登录失败：'+error.message);
+}
+async function logoutAccount(){if(!cloudConfigured||!supabaseClient)return closeAuth();await supabaseClient.auth.signOut();currentUser=null;updateAccountUI();closeAuth();toast('已退出账号，本机数据不会被删除')}
+
+function mergeById(a,b){
+  const m=new Map((Array.isArray(a)?a:[]).filter(x=>x&&x.id).map(x=>[x.id,x]));
+  (Array.isArray(b)?b:[]).filter(x=>x&&x.id).forEach(x=>{if(!m.has(x.id))m.set(x.id,x)});
+  return [...m.values()];
+}
+function mergeProgress(localP,cloudP){
+  const out={...(cloudP||{})};
+  Object.entries(localP||{}).forEach(([id,p])=>{
+    const c=out[id];
+    if(!c){out[id]=p;return;}
+    const lt=Number(p.updatedAt||0),ct=Number(c.updatedAt||0);
+    if(lt>ct)out[id]=p;
+  });
+  return out;
+}
+async function loadCloudState(){
+  if(!currentUser||!supabaseClient)return;
+  try{
+    const {data,error}=await supabaseClient.from('user_learning_state').select('*').eq('user_id',currentUser.id).maybeSingle();
+    if(error)throw error;
+    if(data){
+      progress=mergeProgress(progress,data.progress||{});
+      target=Number(data.target||target);
+      const localCustom=JSON.parse(localStorage.getItem(CUSTOM_STORE)||'{"cards":[],"questions":[]}');
+      const mergedCards=mergeById(localCustom.cards||[],data.custom_cards||[]);
+      const mergedQuestions=mergeById(localCustom.questions||[],data.custom_questions||[]);
+      localStorage.setItem(CUSTOM_STORE,JSON.stringify({cards:mergedCards,questions:mergedQuestions}));
+      mergedCards.forEach(x=>{if(x&&!baseCards.some(c=>c.id===x.id))baseCards.push(x)});
+      mergedQuestions.forEach(x=>{if(x&&!questions.some(q=>q.id===x.id))questions.push(x)});
+      const localDone=Number(localStorage.getItem('km_done_'+dateKey(today()))||0);
+      localStorage.setItem('km_done_'+dateKey(today()),String(Math.max(localDone,Number(data.daily_done||0))));
+      saveLocalOnly();
+      renderDashboard();renderKnowledge();renderQuestions();
+      await syncCloudNow();
+    }else{await syncCloudNow();}
+  }catch(e){console.error(e);toast('云端读取失败：'+(e.message||e));}
+}
+function saveLocalOnly(){localStorage.setItem('km_progress',JSON.stringify(progress));localStorage.setItem('km_target',String(target));}
+function queueCloudSync(){
+  if(!currentUser||!supabaseClient)return;
+  clearTimeout(cloudSyncTimer);cloudSyncTimer=setTimeout(syncCloudNow,700);
+}
+async function syncCloudNow(){
+  if(!currentUser||!supabaseClient)return;
+  try{const payload=cloudState();const {error}=await supabaseClient.from('user_learning_state').upsert(payload,{onConflict:'user_id'});if(error)throw error;}catch(e){console.error(e);toast('云同步失败：'+(e.message||e));}
+}
+
+
 const sources=[
  {name:'考研数学大纲.pdf',meta:'2021版数学考试大纲 · 供数学一结构与范围校准',status:'已纳入框架',warn:false},
  {name:'必背公式高数篇.pdf',meta:'32页 · 级数、微分方程、空间解析几何、多元积分等',status:'已纳入首版卡片',warn:false},
@@ -219,8 +371,8 @@ const today=()=>{const d=new Date();d.setHours(0,0,0,0);return d};
 const dateKey=(d)=>{const x=new Date(d);x.setHours(0,0,0,0);return x.toISOString().slice(0,10)};
 const addDays=(d,n)=>new Date(new Date(d).getTime()+n*DAY);
 const isDue=(id)=>{const p=progress[id];return !p || !p.next || new Date(p.next)<=today()};
-function getP(id){return progress[id]||{stage:0,next:dateKey(today()),last:null,seen:false,wrong:0};}
-function save(){localStorage.setItem('km_progress',JSON.stringify(progress));}
+function getP(id){return progress[id]||{stage:0,next:dateKey(today()),last:null,seen:false,wrong:0,updatedAt:0};}
+function save(){saveLocalOnly();queueCloudSync();}
 function saveTarget(v){target=Number(v);localStorage.setItem('km_target',target);document.getElementById('rangeValue').textContent=target;document.getElementById('targetCount').textContent=target;renderDashboard();}
 function toast(msg){const e=document.getElementById('toast');e.textContent=msg;e.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>e.classList.remove('show'),2200)}
 function go(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.go===id));if(id==='dashboard')renderDashboard();if(id==='knowledge')renderKnowledge();if(id==='questions')renderQuestions();if(id==='sources')renderSources();if(id==='settings'){document.getElementById('targetRange').value=target;document.getElementById('rangeValue').textContent=target}window.scrollTo({top:0,behavior:'smooth'})}
@@ -256,25 +408,41 @@ function renderReviewCard(){
  if(reviewIndex>=total){document.getElementById('flashcard').innerHTML=`<div style="text-align:center;padding:50px 15px"><div class="badge">完成</div><h2 style="font-size:28px;margin:14px 0 8px">今日复习完成 🎯</h2><div class="concept">你完成了 ${reviewDone} 张卡片。认知为“认识”的卡片会进入下一复习阶段；“模糊”和“不认识”都会回到学习阶段。</div><button class="primary" style="margin-top:18px" onclick="go('dashboard')">返回今日复习</button></div>`;return}
  const c=reviewQueue[reviewIndex],p=getP(c.id);document.getElementById('reviewHeading').textContent=c.title;
  const typeName=c.type==='formula'?'公式':c.type==='equiv'?'等价转换':'概念定义';
- document.getElementById('flashcard').innerHTML=`<div><div class="tagrow"><span class="badge">${c.subject}</span><span class="badge">${typeName}</span><span class="badge">第 ${p.stage+1} 阶段</span></div><div class="flashtitle">${c.title}</div><div class="formula">${escapeHtml(c.formula||'')}</div><div class="memorybox"><div class="tiny">核心理解</div><div class="concept">${escapeHtml(c.concept||'')}</div><div class="tiny" style="margin-top:8px">记忆钩子：${escapeHtml(c.memory||'')}</div></div></div><div><div class="tiny">先闭眼回忆，再选择你的真实状态。</div><div class="answerbar"><button class="ans rec" onclick="answer('recognized')"><strong>认识</strong><small>我能主动写出并说明</small></button><button class="ans fuzzy" onclick="answer('fuzzy')"><strong>模糊</strong><small>计入不认识</small></button><button class="ans unknown" onclick="answer('unknown')"><strong>不认识</strong><small>需要重新学习</small></button></div></div>`;
+ document.getElementById('flashcard').innerHTML=`<div><div class="tagrow"><span class="badge">${c.subject}</span><span class="badge">${typeName}</span><span class="badge">第 ${p.stage+1} 阶段</span></div><div class="flashtitle">${c.title}</div>${paperImg(c.title,c.formula||'',c.subject+' · '+typeName)}<div class="memorybox"><div class="tiny">核心理解</div><div class="concept">${escapeHtml(c.concept||'')}</div><div class="tiny" style="margin-top:8px">记忆钩子：${escapeHtml(c.memory||'')}</div></div></div><div><div class="tiny">先闭眼回忆，再选择你的真实状态。</div><div class="answerbar"><button class="ans rec" onclick="answer('recognized')"><strong>认识</strong><small>我能主动写出并说明</small></button><button class="ans fuzzy" onclick="answer('fuzzy')"><strong>模糊</strong><small>计入不认识</small></button><button class="ans unknown" onclick="answer('unknown')"><strong>不认识</strong><small>需要重新学习</small></button></div></div>`;
  (c.questionIds||[]).map(id=>questions.find(x=>x.id===id)).filter(Boolean).slice(0,5).forEach(x=>{const r=document.createElement('div');r.className='row';r.innerHTML=`<button class="linkbtn" onclick="showQuestion('${x.id}')">${x.year} · ${x.label} · ${x.title}</button>`;q.appendChild(r)})
 }
 function answer(kind){
- const c=reviewQueue[reviewIndex];const p=getP(c.id);p.seen=true;p.last=kind;
+ const c=reviewQueue[reviewIndex];const p=getP(c.id);p.seen=true;p.last=kind;p.updatedAt=Date.now();
  if(kind==='recognized'){p.stage=Math.min(p.stage+1,intervals.length-1);p.wrong=0;}
  else {p.stage=0;p.wrong=(p.wrong||0)+1;}
- const interval=intervals[p.stage];p.next=dateKey(addDays(today(),interval===0?1:interval));progress[c.id]=p;save();reviewDone++;localStorage.setItem('km_done_'+dateKey(today()),String(Number(localStorage.getItem('km_done_'+dateKey(today()))||0)+1));reviewIndex++;renderReviewCard();
+ const interval=intervals[p.stage];p.next=dateKey(addDays(today(),interval===0?1:interval));progress[c.id]=p;save();reviewDone++;localStorage.setItem('km_done_'+dateKey(today()),String(Number(localStorage.getItem('km_done_'+dateKey(today()))||0)+1));queueCloudSync();reviewIndex++;renderReviewCard();
 }
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
 
 let currentSubject='全部';
 document.querySelectorAll('#knowledgeTabs .tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#knowledgeTabs .tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');currentSubject=b.dataset.sub;renderKnowledge()}));
+function xmlEscape(s){return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;')}
+function wrapText(text,maxChars){
+ const out=[];String(text??'').split(/\
+/).forEach(part=>{let line='';for(const ch of part){if(line.length>=maxChars){out.push(line);line=''}line+=ch}out.push(line)});return out.length?out:[''];
+}
+function makePaperImage(title,body,meta=''){
+ const lines=wrapText(body,34);const lineH=42;const h=Math.max(260,170+lines.length*lineH);
+ const tspans=lines.map((x,i)=>`<tspan x="80" dy="${i?lineH:0}">${xmlEscape(x)||' '}</tspan>`).join('');
+ const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${h}" viewBox="0 0 1200 ${h}"><rect width="1200" height="${h}" rx="28" fill="#fffdf8"/><rect x="28" y="28" width="1144" height="${h-56}" rx="22" fill="none" stroke="#e7dcc5" stroke-width="3"/><text x="80" y="92" font-family="-apple-system,BlinkMacSystemFont,'Microsoft YaHei',sans-serif" font-size="32" font-weight="700" fill="#1d2a45">${xmlEscape(title)}</text><text x="80" y="130" font-family="-apple-system,BlinkMacSystemFont,'Microsoft YaHei',sans-serif" font-size="18" fill="#8a7657">${xmlEscape(meta||'考研数学 · 重点记忆')}</text><text x="80" y="190" font-family="-apple-system,BlinkMacSystemFont,'Microsoft YaHei',sans-serif" font-size="28" fill="#182338">${tspans}</text><line x1="80" y1="${h-48}" x2="1120" y2="${h-48}" stroke="#eee4d2"/><text x="80" y="${h-20}" font-family="-apple-system,BlinkMacSystemFont,'Microsoft YaHei',sans-serif" font-size="15" fill="#9a8b73">研数记忆 · 点击图片可放大</text></svg>`;
+ return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg);
+}
+function paperImg(title,body,meta=''){const src=makePaperImage(title,body,meta);return `<img class="paper-img" src="${src}" alt="${escapeHtml(title)}" loading="lazy" onclick="openImageModal(this.src,'${escapeHtml(title).replace(/'/g,"\\'")}')"><div class="paper-tip">图片版 · 点击放大查看</div>`}
+function openImageModal(src,caption=''){document.getElementById('imageModalImg').src=src;document.getElementById('imageCaption').textContent=caption+' · 点击任意位置关闭';document.getElementById('imageModal').classList.add('show');document.body.style.overflow='hidden'}
+function closeImageModal(){document.getElementById('imageModal').classList.remove('show');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeImageModal()});
+
 function renderKnowledge(){
  const s=(document.getElementById('kSearch').value||'').toLowerCase().trim();const t=document.getElementById('kType').value;
  let arr=baseCards.filter(c=>(currentSubject==='全部'||c.subject===currentSubject)&&(t==='all'||c.type===t));
  if(s)arr=arr.filter(c=>[c.title,c.formula,c.concept,(c.tags||[]).join(' ')].join(' ').toLowerCase().includes(s));
  const grid=document.getElementById('knowledgeGrid');grid.innerHTML='';if(!arr.length){grid.innerHTML='<div class="empty" style="grid-column:1/-1">没有匹配的知识卡。</div>';return}
- arr.forEach(c=>{const related=(c.questionIds||[]).map(id=>questions.find(q=>q.id===id)).filter(Boolean);const el=document.createElement('article');el.className='knowledge-card';el.innerHTML=`<div class="tagrow"><span class="badge">${c.subject}</span><span class="badge">${c.type==='formula'?'公式':c.type==='equiv'?'等价转换':'概念定义'}</span><span class="tiny" style="margin-left:auto">${getP(c.id).stage>=intervals.length-1?'已掌握':(isDue(c.id)?'今天复习':'未到期')}</span></div><h3>${escapeHtml(c.title)}</h3><div class="formula" style="font-size:19px">${escapeHtml(c.formula||'')}</div><div class="snippet" style="margin-top:9px">${escapeHtml(c.concept||'')}</div><div class="chips" style="margin-top:10px">${(c.tags||[]).map(x=>`<span class="chip">${escapeHtml(x)}</span>`).join('')}</div><div style="margin-top:12px">${related.slice(0,3).map(q=>`<button class="linkbtn" onclick="showQuestion('${q.id}')">${q.year} · ${q.label}</button>`).join(' · ')}</div>`;grid.appendChild(el)})
+ arr.forEach(c=>{const related=(c.questionIds||[]).map(id=>questions.find(q=>q.id===id)).filter(Boolean);const el=document.createElement('article');el.className='knowledge-card';el.innerHTML=`<div class="tagrow"><span class="badge">${c.subject}</span><span class="badge">${c.type==='formula'?'公式':c.type==='equiv'?'等价转换':'概念定义'}</span><span class="tiny" style="margin-left:auto">${getP(c.id).stage>=intervals.length-1?'已掌握':(isDue(c.id)?'今天复习':'未到期')}</span></div><h3>${escapeHtml(c.title)}</h3>${paperImg(c.title,c.formula||'',c.subject+' · '+(c.type==='formula'?'公式':c.type==='equiv'?'等价转换':'概念定义'))}<div class="snippet" style="margin-top:9px">${escapeHtml(c.concept||'')}</div><div class="chips" style="margin-top:10px">${(c.tags||[]).map(x=>`<span class="chip">${escapeHtml(x)}</span>`).join('')}</div><div style="margin-top:12px">${related.slice(0,3).map(q=>`<button class="linkbtn" onclick="showQuestion('${q.id}')">${q.year} · ${q.label}</button>`).join(' · ')}</div>`;grid.appendChild(el)})
 }
 
 function renderQuestions(){
@@ -282,7 +450,7 @@ function renderQuestions(){
  if(document.getElementById('qYear').options.length===1){[...new Set(questions.map(x=>x.year))].sort((a,b)=>b-a).forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v+'年';document.getElementById('qYear').appendChild(o)})}
  let arr=questions.filter(q=>(y==='all'||String(q.year)===String(y))&&(subj==='all'||q.subject===subj));if(s)arr=arr.filter(q=>[q.year,q.subject,q.label,q.title,q.stem,q.analysis,(q.tags||[]).join(' ')].join(' ').toLowerCase().includes(s));
  const box=document.getElementById('questionList');box.innerHTML='';if(!arr.length){box.innerHTML='<div class="empty">没有匹配的真题。</div>';return}
- arr.forEach(q=>{const el=document.createElement('article');el.className='question';el.id='question-'+q.id;el.innerHTML=`<div class="qtop"><div><span class="year">${q.year} 年</span> <span class="badge">${q.subject}</span> <span class="badge">${q.label}</span></div><div class="chips">${q.tags.map(x=>`<span class="chip">${escapeHtml(x)}</span>`).join('')}</div></div><div class="qtitle">${escapeHtml(q.title)}</div><div class="snippet">${escapeHtml(q.stem)}</div><div class="analysis"><b>解析</b><br>${escapeHtml(q.analysis)}</div><div class="answer">参考答案/结论：${escapeHtml(q.answer)}</div>`;box.appendChild(el)})
+ arr.forEach(q=>{const el=document.createElement('article');el.className='question';el.id='question-'+q.id;el.innerHTML=`<div class="qtop"><div><span class="year">${q.year} 年</span> <span class="badge">${q.subject}</span> <span class="badge">${q.label}</span></div><div class="chips">${q.tags.map(x=>`<span class="chip">${escapeHtml(x)}</span>`).join('')}</div></div><div class="qtitle">${escapeHtml(q.title)}</div>${paperImg(q.year+'年 '+q.label,q.stem,q.subject+' · '+q.title)}<div class="analysis"><b>解析</b><br>${escapeHtml(q.analysis)}</div><div class="answer">参考答案/结论：${escapeHtml(q.answer)}</div>`;box.appendChild(el)})
 }
 function showQuestion(id){go('questions');setTimeout(()=>{const e=document.getElementById('question-'+id);if(e){e.scrollIntoView({behavior:'smooth',block:'start'});e.style.boxShadow='0 0 0 3px #dce3ff';setTimeout(()=>e.style.boxShadow='',900)}},60)}
 function renderSources(){const g=document.getElementById('sourceGrid');g.innerHTML=sources.map(s=>`<div class="source ${s.warn?'warn':''}"><span class="status">${escapeHtml(s.status)}</span><h3>${escapeHtml(s.name)}</h3><div class="snippet">${escapeHtml(s.meta)}</div></div>`).join('')}
@@ -294,11 +462,12 @@ function importJSON(){try{
   if(data.progress&&typeof data.progress==='object')progress={...progress,...data.progress};
   if(Number.isFinite(Number(data.target)))saveTarget(data.target);save();
   localStorage.setItem(CUSTOM_STORE,JSON.stringify({cards:baseCards,questions}));
+  queueCloudSync();
   renderKnowledge();renderQuestions();renderDashboard();toast(`导入完成，新增 ${added} 条数据，并已保存到当前浏览器`)
 }catch(e){toast('JSON 格式有误，请检查');console.error(e)}}
-function resetProgress(){if(!confirm('确认只重置学习进度？知识卡和真题不会删除。'))return;progress={};save();renderDashboard();renderKnowledge();toast('学习进度已重置')}
+function resetProgress(){if(!confirm('确认只重置学习进度？知识卡和真题不会删除。'))return;progress={};save();renderDashboard();renderKnowledge();toast(currentUser?'学习进度已重置并同步':'学习进度已重置')}
 
-renderDashboard();renderKnowledge();renderQuestions();renderSources();
+renderDashboard();renderKnowledge();renderQuestions();renderSources();initCloud();
 </script>
 </body>
 </html>
