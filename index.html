@@ -27,7 +27,7 @@ main{max-width:1180px;margin:auto;padding:26px 18px 70px}.hero{display:grid;grid
 .sidebar{display:flex;flex-direction:column;gap:12px}.mini{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fff}.mini h4{margin:0 0 7px}.list{display:flex;flex-direction:column;gap:9px}.row{display:flex;justify-content:space-between;gap:9px;padding:11px 0;border-bottom:1px dashed var(--line)}.row:last-child{border-bottom:0}.row .meta{font-size:12px;color:var(--muted)}
 .filterbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.knowledge-card{border:1px solid var(--line);background:#fff;border-radius:18px;padding:16px}.knowledge-card:hover{box-shadow:0 10px 28px rgba(34,49,82,.06);border-color:#dce2ef}.knowledge-card h3{font-size:16px;margin:9px 0}.snippet{line-height:1.7;color:#59667c;font-size:14px}.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{font-size:11px;background:#f3f5fa;color:#68758a;padding:4px 7px;border-radius:999px}.linkbtn{border:0;background:none;padding:0;color:#3356c9;font-weight:700}
 .question{border:1px solid var(--line);border-radius:18px;padding:16px;background:#fff}.question + .question{margin-top:12px}.qtop{display:flex;align-items:center;justify-content:space-between;gap:8px}.year{font-weight:850}.qtitle{font-weight:750;margin:9px 0}.analysis{padding:12px 13px;background:#f7f8fc;border-radius:12px;color:#525f74;line-height:1.72;font-size:14px;margin-top:10px}.analysis b{color:#203252}.answer{font-size:12px;color:#51607a;margin-top:7px}
-.sourcegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.source{border:1px solid var(--line);border-radius:16px;padding:15px;background:#fff}.source h3{font-size:15px;margin:8px 0}.source .status{font-size:11px;padding:4px 8px;border-radius:999px;background:#eef3ff;color:#4059ad;display:inline-block}.source.warn .status{background:#fff6df;color:#9d6913}
+.sourcegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.source{border:1px solid var(--line);border-radius:16px;padding:15px;background:#fff}.source h3{font-size:15px;margin:8px 0}.source .status{font-size:11px;padding:4px 8px;border-radius:999px;background:#eef3ff;color:#4059ad;display:inline-block}.source.warn .status{background:#fff6df;color:#9d6913}.source .sourceactions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.source .sourcebtn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid var(--line);background:#fff;color:#3157d5;padding:8px 10px;border-radius:10px;font-size:12px;font-weight:700}.source .sourcebtn.primary{background:#3157d5;color:#fff;border-color:#3157d5}.source .sourcebtn.disabled{color:#9aa4b6;background:#f6f7fa;cursor:not-allowed}.source .sourcehint{margin-top:9px;font-size:11px;color:#8994a7;line-height:1.5}
 .settings{display:grid;grid-template-columns:1fr 1fr;gap:16px}.settingblock{border:1px solid var(--line);border-radius:18px;padding:16px}.range{width:100%}.jsonarea{width:100%;min-height:220px;border:1px solid var(--line);border-radius:12px;padding:11px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
 
 .accountbtn{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#fff;padding:9px 12px;border-radius:11px;font-size:12px;white-space:nowrap}.accountbtn:hover{background:rgba(255,255,255,.1)}
@@ -122,7 +122,7 @@ main{max-width:1180px;margin:auto;padding:26px 18px 70px}.hero{display:grid;grid
 
 <section id="sources" class="section">
   <div class="panelhead"><div><div class="tiny">资料底座</div><h2 style="font-size:25px;margin:4px 0">你的考研资料库</h2></div></div>
-  <div class="panel" style="margin-bottom:14px"><div class="concept">首版内容按你上传的数学大纲、三科必背公式资料与真题资料建立。部分 PDF 是扫描/图片版，无法可靠提取全文，所以系统不会擅自补写题干；可继续导入结构化 JSON，把你后续喂来的真题、公式、定义逐步加入。</div></div>
+  <div class="panel" style="margin-bottom:14px"><div class="concept">这里集中放置本网站使用的原始资料：考试大纲、三科公式资料和历年真题。点击“查看源文件”可在新标签页打开 PDF；“GitHub 文件页”用于查看网站仓库中的同一份资料。扫描版资料仍以原 PDF 为准，网站只整理可可靠识别的内容。</div></div>
   <div id="sourceGrid" class="sourcegrid"></div>
 </section>
 
@@ -295,16 +295,16 @@ async function syncCloudNow(){
 
 
 const sources=[
- {name:'考研数学大纲.pdf',meta:'2021版数学考试大纲 · 供数学一结构与范围校准',status:'已纳入框架',warn:false},
- {name:'必背公式高数篇.pdf',meta:'32页 · 级数、微分方程、空间解析几何、多元积分等',status:'已纳入首版卡片',warn:false},
- {name:'线代必备十页纸.pdf',meta:'11页 · 行列式、伴随、逆、二次型、正定等',status:'已纳入首版卡片',warn:false},
- {name:'概率必备八页纸.pdf',meta:'9页 · 概率、独立、分布、数字特征、估计与检验',status:'已纳入首版卡片',warn:false},
- {name:'1987-2009年考研数学一真题.pdf',meta:'72页 · 1987—2009真题汇总',status:'已载入可识别题目',warn:false},
- {name:'2010-2019年考研数学一真题.pdf',meta:'40页 · 2010—2019真题汇总',status:'已载入可识别题目',warn:false},
- {name:'2020年考研数学（一）真题.pdf',meta:'4页 · 数学一真题',status:'已载入可识别题目',warn:false},
- {name:'2021年考研数学（一）真题.pdf',meta:'4页 · 数学一真题',status:'已载入可识别题目',warn:false},
- {name:'2022年考研数学（一）真题.pdf',meta:'4页 · 当前 PDF 文字层不可可靠提取',status:'待结构化解析',warn:true},
- {name:'2025年考研数学一真题.pdf',meta:'9页 · 含题目与答案/解析页面',status:'已载入可识别题目',warn:false}
+ {name:'考研数学大纲.pdf',meta:'2021版数学考试大纲 · 供数学一结构与范围校准',status:'已纳入框架',warn:false,group:'考试大纲',path:'sources/考研数学大纲.pdf'},
+ {name:'必背公式高数篇.pdf',meta:'32页 · 级数、微分方程、空间解析几何、多元积分等',status:'已纳入首版卡片',warn:false,group:'公式资料',path:'sources/必背公式高数篇.pdf'},
+ {name:'线代必备十页纸.pdf',meta:'11页 · 行列式、伴随、逆、二次型、正定等',status:'已纳入首版卡片',warn:false,group:'公式资料',path:'sources/线代必备十页纸.pdf'},
+ {name:'概率必备八页纸.pdf',meta:'9页 · 概率、独立、分布、数字特征、估计与检验',status:'已纳入首版卡片',warn:false,group:'公式资料',path:'sources/概率必备八页纸.pdf'},
+ {name:'1987-2009年考研数学一真题.pdf',meta:'72页 · 1987—2009真题汇总',status:'已载入可识别题目',warn:false,group:'历年真题',path:'sources/1987-2009年考研数学一真题.pdf'},
+ {name:'2010-2019年考研数学一真题.pdf',meta:'40页 · 2010—2019真题汇总',status:'已载入可识别题目',warn:false,group:'历年真题',path:'sources/2010-2019年考研数学一真题.pdf'},
+ {name:'2020年考研数学（一）真题.pdf',meta:'4页 · 数学一真题',status:'已载入可识别题目',warn:false,group:'历年真题',path:'sources/2020年考研数学（一）真题.pdf'},
+ {name:'2021年考研数学（一）真题.pdf',meta:'4页 · 数学一真题',status:'已载入可识别题目',warn:false,group:'历年真题',path:'sources/2021年考研数学（一）真题.pdf'},
+ {name:'2022年考研数学（一）真题.pdf',meta:'4页 · 当前 PDF 文字层不可可靠提取',status:'待结构化解析',warn:true,group:'历年真题',path:'sources/2022年考研数学（一）真题.pdf'},
+ {name:'2025年考研数学一真题.pdf',meta:'9页 · 含题目与答案/解析页面',status:'已载入可识别题目',warn:false,group:'历年真题',path:'sources/2025年考研数学一真题.pdf'}
 ];
 
 const baseCards=[
@@ -452,7 +452,11 @@ function renderQuestions(){
  arr.forEach(q=>{const el=document.createElement('article');el.className='question';el.id='question-'+q.id;el.innerHTML=`<div class="qtop"><div><span class="year">${q.year} 年</span> <span class="badge">${q.subject}</span> <span class="badge">${q.label}</span></div><div class="chips">${q.tags.map(x=>`<span class="chip">${escapeHtml(x)}</span>`).join('')}</div></div><div class="qtitle">${escapeHtml(q.title)}</div>${paperImg(q.year+'年 '+q.label,q.stem,q.subject+' · '+q.title)}<div class="analysis"><b>解析</b><br>${escapeHtml(q.analysis)}</div><div class="answer">参考答案/结论：${escapeHtml(q.answer)}</div>`;box.appendChild(el)})
 }
 function showQuestion(id){go('questions');setTimeout(()=>{const e=document.getElementById('question-'+id);if(e){e.scrollIntoView({behavior:'smooth',block:'start'});e.style.boxShadow='0 0 0 3px #dce3ff';setTimeout(()=>e.style.boxShadow='',900)}},60)}
-function renderSources(){const g=document.getElementById('sourceGrid');g.innerHTML=sources.map(s=>`<div class="source ${s.warn?'warn':''}"><span class="status">${escapeHtml(s.status)}</span><h3>${escapeHtml(s.name)}</h3><div class="snippet">${escapeHtml(s.meta)}</div></div>`).join('')}
+function renderSources(){
+ const g=document.getElementById('sourceGrid');
+ const groups=[...new Set(sources.map(s=>s.group))];
+ g.innerHTML=groups.map(group=>{const items=sources.filter(s=>s.group===group);return `<div class="sourcegroup" style="grid-column:1/-1"><div style="display:flex;align-items:center;gap:8px;margin:6px 0 2px"><span class="badge">${escapeHtml(group)}</span><span class="tiny">${items.length} 份</span></div><div class="sourcegrid" style="margin-top:10px">${items.map(s=>`<div class="source ${s.warn?'warn':''}"><span class="status">${escapeHtml(s.status)}</span><h3>${escapeHtml(s.name)}</h3><div class="snippet">${escapeHtml(s.meta)}</div><div class="sourceactions"><a class="sourcebtn primary" href="${encodeURI(s.path)}" target="_blank" rel="noopener">查看源文件</a><a class="sourcebtn" href="https://github.com/ciweiy717/kaoyan-math-memory/blob/main/${encodeURI(s.path)}" target="_blank" rel="noopener">GitHub 文件页</a></div><div class="sourcehint">源文件同步到网站后，可直接在浏览器新标签页打开。</div></div>`).join('')}</div></div>`}).join('')
+}
 function exportJSON(){const payload={cards:baseCards,questions,progress,target,exportedAt:new Date().toISOString()};document.getElementById('jsonArea').value=JSON.stringify(payload,null,2);toast('已把当前数据写入文本框')}
 function importJSON(){try{
   const data=JSON.parse(document.getElementById('jsonArea').value);let added=0;
