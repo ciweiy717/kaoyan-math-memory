@@ -27,7 +27,7 @@ main{max-width:1180px;margin:auto;padding:26px 18px 70px}.hero{display:grid;grid
 .sidebar{display:flex;flex-direction:column;gap:12px}.mini{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fff}.mini h4{margin:0 0 7px}.list{display:flex;flex-direction:column;gap:9px}.row{display:flex;justify-content:space-between;gap:9px;padding:11px 0;border-bottom:1px dashed var(--line)}.row:last-child{border-bottom:0}.row .meta{font-size:12px;color:var(--muted)}
 .filterbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.knowledge-card{border:1px solid var(--line);background:#fff;border-radius:18px;padding:16px}.knowledge-card:hover{box-shadow:0 10px 28px rgba(34,49,82,.06);border-color:#dce2ef}.knowledge-card h3{font-size:16px;margin:9px 0}.snippet{line-height:1.7;color:#59667c;font-size:14px}.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{font-size:11px;background:#f3f5fa;color:#68758a;padding:4px 7px;border-radius:999px}.linkbtn{border:0;background:none;padding:0;color:#3356c9;font-weight:700}
 .question{border:1px solid var(--line);border-radius:18px;padding:16px;background:#fff}.question + .question{margin-top:12px}.qtop{display:flex;align-items:center;justify-content:space-between;gap:8px}.year{font-weight:850}.qtitle{font-weight:750;margin:9px 0}.analysis{padding:12px 13px;background:#f7f8fc;border-radius:12px;color:#525f74;line-height:1.72;font-size:14px;margin-top:10px}.analysis b{color:#203252}.answer{font-size:12px;color:#51607a;margin-top:7px}
-.sourcegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.source{border:1px solid var(--line);border-radius:16px;padding:15px;background:#fff}.source h3{font-size:15px;margin:8px 0}.source .status{font-size:11px;padding:4px 8px;border-radius:999px;background:#eef3ff;color:#4059ad;display:inline-block}.source.warn .status{background:#fff6df;color:#9d6913}.source .sourceactions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.source .sourcebtn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid var(--line);background:#fff;color:#3157d5;padding:8px 10px;border-radius:10px;font-size:12px;font-weight:700}.source .sourcebtn.primary{background:#3157d5;color:#fff;border-color:#3157d5}.source .sourcebtn.disabled{color:#9aa4b6;background:#f6f7fa;cursor:not-allowed}.source .sourcehint{margin-top:9px;font-size:11px;color:#8994a7;line-height:1.5}
+.sourcegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.source{border:1px solid var(--line);border-radius:16px;padding:15px;background:#fff}.source h3{font-size:15px;margin:8px 0}.source .status{font-size:11px;padding:4px 8px;border-radius:999px;background:#eef3ff;color:#4059ad;display:inline-block}.source.warn .status{background:#fff6df;color:#9d6913}
 .settings{display:grid;grid-template-columns:1fr 1fr;gap:16px}.settingblock{border:1px solid var(--line);border-radius:18px;padding:16px}.range{width:100%}.jsonarea{width:100%;min-height:220px;border:1px solid var(--line);border-radius:12px;padding:11px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
 
 .accountbtn{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#fff;padding:9px 12px;border-radius:11px;font-size:12px;white-space:nowrap}.accountbtn:hover{background:rgba(255,255,255,.1)}
@@ -35,8 +35,7 @@ main{max-width:1180px;margin:auto;padding:26px 18px 70px}.hero{display:grid;grid
 @media(max-width:600px){.accountbtn{padding:8px 9px}.nav{gap:7px}.modal{padding:18px}}
 .toast{position:fixed;right:18px;bottom:18px;background:#0d1526;color:#fff;padding:12px 15px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(8px);pointer-events:none;transition:.22s;z-index:99}.toast.show{opacity:1;transform:translateY(0)}
 .empty{padding:40px 10px;text-align:center;color:var(--muted)}
-.paper-img{display:block;width:100%;max-height:430px;object-fit:contain;background:#fff;border:1px solid #e6eaf2;border-radius:16px;box-shadow:0 8px 24px rgba(24,39,72,.07);cursor:zoom-in;margin:12px 0 10px}.paper-img:hover{box-shadow:0 12px 30px rgba(24,39,72,.11);transform:translateY(-1px)}.paper-tip{font-size:11px;color:#8994a7;text-align:center;margin-top:5px}.image-modal{position:fixed;inset:0;background:rgba(8,14,28,.82);display:none;align-items:center;justify-content:center;padding:18px;z-index:180;backdrop-filter:blur(8px)}.image-modal.show{display:flex}.image-modal img{max-width:min(1100px,96vw);max-height:92vh;width:auto;height:auto;object-fit:contain;background:#fff;border-radius:14px;box-shadow:0 30px 90px rgba(0,0,0,.4);cursor:zoom-out}.image-close{position:fixed;right:18px;top:14px;width:42px;height:42px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:28px;line-height:1}.image-caption{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);color:#fff;background:rgba(0,0,0,.42);padding:7px 12px;border-radius:999px;font-size:12px;max-width:90vw;text-align:center}
-
+.paper-wrap{position:relative;margin:10px 0 12px}.paper-img{display:block;width:100%;max-height:520px;object-fit:contain;background:#fff;border:1px solid #e6eaf2;border-radius:16px;box-shadow:0 8px 24px rgba(24,39,72,.07);cursor:zoom-in;transition:.18s}.paper-img:hover{box-shadow:0 14px 34px rgba(24,39,72,.13);transform:translateY(-1px)}.paper-tip{font-size:11px;color:#8994a7;text-align:center;margin-top:5px}.image-source-badge{position:absolute;z-index:2;left:10px;top:10px;padding:5px 8px;border-radius:999px;background:rgba(13,21,38,.88);color:#fff;font-size:11px;font-weight:700;backdrop-filter:blur(5px)}.image-source-badge.generated{background:rgba(49,87,213,.9)}.image-modal{position:fixed;inset:0;background:rgba(8,14,28,.84);display:none;align-items:center;justify-content:center;padding:18px;z-index:180}.image-modal.show{display:flex}.image-modal img{max-width:96vw;max-height:92vh;width:auto;height:auto;object-fit:contain;background:#fff;border-radius:14px;box-shadow:0 30px 90px rgba(0,0,0,.4);cursor:zoom-out}.image-close{position:fixed;right:18px;top:14px;width:42px;height:42px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:28px}.image-caption{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);color:#fff;background:rgba(0,0,0,.42);padding:7px 12px;border-radius:999px;font-size:12px;max-width:90vw;text-align:center}.sourceactions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.paper-wrap{position:relative}.image-source-badge{position:absolute;z-index:2;left:10px;top:10px;padding:5px 8px;border-radius:999px;background:rgba(13,21,38,.88);color:#fff;font-size:11px;font-weight:700;backdrop-filter:blur(5px)}.image-source-badge.generated{background:rgba(49,87,213,.9)}.paper-img{transition:.18s}.paper-wrap:hover .paper-img{box-shadow:0 14px 34px rgba(24,39,72,.13)}.sourceactions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 @media(max-width:900px){.hero,.grid2,.flash-wrap,.settings{grid-template-columns:1fr}.sourcegrid{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr}.kpirow{grid-template-columns:repeat(2,1fr)}.navlinks{overflow:auto}.datechip{display:none}}
 @media(max-width:600px){main{padding:18px 12px 60px}.nav{padding:0 11px;height:61px}.brand{font-size:14px}.navlinks{margin-left:3px}.navbtn{padding:9px 10px;font-size:13px}.hero-card{padding:22px}.hero h1{font-size:28px}.formula{font-size:22px}.answerbar{grid-template-columns:1fr}.sourcegrid{grid-template-columns:1fr}.kpirow{grid-template-columns:1fr 1fr}.panel{padding:15px}.flashcard{padding:18px}}
 </style>
@@ -122,7 +121,7 @@ main{max-width:1180px;margin:auto;padding:26px 18px 70px}.hero{display:grid;grid
 
 <section id="sources" class="section">
   <div class="panelhead"><div><div class="tiny">资料底座</div><h2 style="font-size:25px;margin:4px 0">你的考研资料库</h2></div></div>
-  <div class="panel" style="margin-bottom:14px"><div class="concept">这里集中放置本网站使用的原始资料：考试大纲、三科公式资料和历年真题。点击“查看源文件”可在新标签页打开 PDF；“GitHub 文件页”用于查看网站仓库中的同一份资料。扫描版资料仍以原 PDF 为准，网站只整理可可靠识别的内容。</div></div>
+  <div class="panel" style="margin-bottom:14px"><div class="concept">首版内容按你上传的数学大纲、三科必背公式资料与真题资料建立。部分 PDF 是扫描/图片版，无法可靠提取全文，所以系统不会擅自补写题干；可继续导入结构化 JSON，把你后续喂来的真题、公式、定义逐步加入。</div></div>
   <div id="sourceGrid" class="sourcegrid"></div>
 </section>
 
@@ -158,18 +157,14 @@ main{max-width:1180px;margin:auto;padding:26px 18px 70px}.hero{display:grid;grid
     <div class="authrow single" style="margin-top:12px"><button class="ghost" style="color:#1d2a45;border-color:var(--line);background:#fff" onclick="logoutAccount()">退出当前账号</button></div>
   </div>
 </div>
-
-<div id="imageModal" class="image-modal" onclick="closeImageModal()">
-  <button class="image-close" onclick="event.stopPropagation();closeImageModal()">×</button>
-  <img id="imageModalImg" alt="放大查看" onclick="event.stopPropagation()">
-  <div id="imageCaption" class="image-caption">点击任意位置关闭</div>
-</div>
-<div id="toast" class="toast"></div>
+<div id="toast" class="toast"></div><div id="imageModal" class="image-modal" onclick="closeImageModal()"><button class="image-close" onclick="event.stopPropagation();closeImageModal()">×</button><img id="imageModalImg" src="" alt="" onclick="event.stopPropagation()"><div id="imageCaption" class="image-caption"></div></div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const DAY=86400000;
-const intervals=[0,1,2,4,7,15,30];
+const GITHUB_PAPERS='https://github.com/lx-ruc/kaoyanshuxue';
+const GITHUB_FORMULAS='https://github.com/ULing19/Codex-for-learning-math';
+(sources||[]).forEach(s=>{if(!s.github){s.github=s.group==='公式资料'?GITHUB_FORMULAS:GITHUB_PAPERS}});
 const SUPABASE_URL='YOUR_SUPABASE_URL';
 const SUPABASE_ANON_KEY='YOUR_SUPABASE_ANON_KEY';
 const ENABLE_QQ=false; // QQ 需要在 Supabase 配置自定义 OAuth/OIDC 后改为 true。
@@ -295,16 +290,16 @@ async function syncCloudNow(){
 
 
 const sources=[
- {group:'考试大纲',name:'考研数学大纲.pdf',meta:'2021版数学考试大纲 · 供数学一结构与范围校准',status:'已纳入框架',warn:false},
- {group:'三科必背资料',name:'必背公式高数篇.pdf',meta:'32页 · 级数、微分方程、空间解析几何、多元积分等',status:'已纳入首版卡片',warn:false,url:'https://www.scribd.com/document/1060782808/777%E9%AB%98%E6%95%B0%E5%BF%85%E8%83%8C%E5%85%AC%E5%BC%8F'},
- {group:'三科必背资料',name:'线代必备十页纸.pdf',meta:'11页 · 行列式、伴随、逆、二次型、正定等',status:'已纳入首版卡片',warn:false},
- {group:'三科必背资料',name:'概率必备八页纸.pdf',meta:'9页 · 概率、独立、分布、数字特征、估计与检验',status:'已纳入首版卡片',warn:false},
- {group:'历年真题',name:'1987-2009年考研数学一真题.pdf',meta:'72页 · 1987—2009真题汇总',status:'已载入可识别题目',warn:false,url:'https://max.book118.com/html/2024/0102/7014106142006024.shtm'},
- {group:'历年真题',name:'2010-2019年考研数学一真题.pdf',meta:'40页 · 2010—2019真题汇总',status:'已载入可识别题目',warn:false,url:'https://www.scribd.com/document/963789841/%E5%90%88%E9%9B%86-2010-2019%E5%B9%B4%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E4%B8%80%E7%9C%9F%E9%A2%98'},
- {group:'历年真题',name:'2020年考研数学（一）真题.pdf',meta:'4页 · 数学一真题',status:'已载入可识别题目',warn:false,url:'https://www.eduego.com/fqrz/shiti/6915.html'},
- {group:'历年真题',name:'2021年考研数学（一）真题.pdf',meta:'4页 · 数学一真题',status:'已载入可识别题目',warn:false,url:'https://kaoyan.xdf.cn/202012/11139880.html'},
- {group:'历年真题',name:'2022年考研数学（一）真题.pdf',meta:'4页 · 当前 PDF 文字层不可可靠提取',status:'待结构化解析',warn:true,url:'https://kaoyan.xdf.cn/202310/13540287.html'},
- {group:'历年真题',name:'2025年考研数学一真题.pdf',meta:'9页 · 含题目与答案/解析页面',status:'已载入可识别题目',warn:false,url:'https://kaoyan.koolearn.com/20250103/1795517.html'}
+ {name:'考研数学大纲.pdf',meta:'2021版数学考试大纲 · 供数学一结构与范围校准',status:'已纳入框架',warn:false},
+ {name:'必背公式高数篇.pdf',meta:'32页 · 级数、微分方程、空间解析几何、多元积分等',status:'已纳入首版卡片',warn:false},
+ {name:'线代必备十页纸.pdf',meta:'11页 · 行列式、伴随、逆、二次型、正定等',status:'已纳入首版卡片',warn:false},
+ {name:'概率必备八页纸.pdf',meta:'9页 · 概率、独立、分布、数字特征、估计与检验',status:'已纳入首版卡片',warn:false},
+ {name:'1987-2009年考研数学一真题.pdf',meta:'72页 · 1987—2009真题汇总',status:'已载入可识别题目',warn:false},
+ {name:'2010-2019年考研数学一真题.pdf',meta:'40页 · 2010—2019真题汇总',status:'已载入可识别题目',warn:false},
+ {name:'2020年考研数学（一）真题.pdf',meta:'4页 · 数学一真题',status:'已载入可识别题目',warn:false},
+ {name:'2021年考研数学（一）真题.pdf',meta:'4页 · 数学一真题',status:'已载入可识别题目',warn:false},
+ {name:'2022年考研数学（一）真题.pdf',meta:'4页 · 当前 PDF 文字层不可可靠提取',status:'待结构化解析',warn:true},
+ {name:'2025年考研数学一真题.pdf',meta:'9页 · 含题目与答案/解析页面',status:'已载入可识别题目',warn:false}
 ];
 
 const baseCards=[
@@ -408,7 +403,7 @@ function renderReviewCard(){
  if(reviewIndex>=total){document.getElementById('flashcard').innerHTML=`<div style="text-align:center;padding:50px 15px"><div class="badge">完成</div><h2 style="font-size:28px;margin:14px 0 8px">今日复习完成 🎯</h2><div class="concept">你完成了 ${reviewDone} 张卡片。认知为“认识”的卡片会进入下一复习阶段；“模糊”和“不认识”都会回到学习阶段。</div><button class="primary" style="margin-top:18px" onclick="go('dashboard')">返回今日复习</button></div>`;return}
  const c=reviewQueue[reviewIndex],p=getP(c.id);document.getElementById('reviewHeading').textContent=c.title;
  const typeName=c.type==='formula'?'公式':c.type==='equiv'?'等价转换':'概念定义';
- document.getElementById('flashcard').innerHTML=`<div><div class="tagrow"><span class="badge">${c.subject}</span><span class="badge">${typeName}</span><span class="badge">第 ${p.stage+1} 阶段</span></div><div class="flashtitle">${c.title}</div>${paperImg(c.title,c.formula||'',c.subject+' · '+typeName)}<div class="memorybox"><div class="tiny">核心理解</div><div class="concept">${escapeHtml(c.concept||'')}</div><div class="tiny" style="margin-top:8px">记忆钩子：${escapeHtml(c.memory||'')}</div></div></div><div><div class="tiny">先闭眼回忆，再选择你的真实状态。</div><div class="answerbar"><button class="ans rec" onclick="answer('recognized')"><strong>认识</strong><small>我能主动写出并说明</small></button><button class="ans fuzzy" onclick="answer('fuzzy')"><strong>模糊</strong><small>计入不认识</small></button><button class="ans unknown" onclick="answer('unknown')"><strong>不认识</strong><small>需要重新学习</small></button></div></div>`;
+ document.getElementById('flashcard').innerHTML=`<div><div class="tagrow"><span class="badge">${c.subject}</span><span class="badge">${typeName}</span><span class="badge">第 ${p.stage+1} 阶段</span></div><div class="flashtitle">${c.title}</div>${paperImg(c.title,c.formula||c.concept||'',c.subject+' · '+typeName)}<div class="memorybox"><div class="tiny">核心理解</div><div class="concept">${escapeHtml(c.concept||'')}</div><div class="tiny" style="margin-top:8px">记忆钩子：${escapeHtml(c.memory||'')}</div></div></div><div><div class="tiny">先闭眼回忆，再选择你的真实状态。</div><div class="answerbar"><button class="ans rec" onclick="answer('recognized')"><strong>认识</strong><small>我能主动写出并说明</small></button><button class="ans fuzzy" onclick="answer('fuzzy')"><strong>模糊</strong><small>计入不认识</small></button><button class="ans unknown" onclick="answer('unknown')"><strong>不认识</strong><small>需要重新学习</small></button></div></div>`;
  (c.questionIds||[]).map(id=>questions.find(x=>x.id===id)).filter(Boolean).slice(0,5).forEach(x=>{const r=document.createElement('div');r.className='row';r.innerHTML=`<button class="linkbtn" onclick="showQuestion('${x.id}')">${x.year} · ${x.label} · ${x.title}</button>`;q.appendChild(r)})
 }
 function answer(kind){
@@ -419,29 +414,38 @@ function answer(kind){
 }
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
 
-let currentSubject='全部';
-document.querySelectorAll('#knowledgeTabs .tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#knowledgeTabs .tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');currentSubject=b.dataset.sub;renderKnowledge()}));
+let repoAnswers={};
+const REPO_RAW='https://raw.githubusercontent.com/lx-ruc/kaoyanshuxue/main/';
 function xmlEscape(s){return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;')}
-function wrapText(text,maxChars){
- const out=[];String(text??'').split(/\n/).forEach(part=>{let line='';for(const ch of part){if(line.length>=maxChars){out.push(line);line=''}line+=ch}out.push(line)});return out.length?out:[''];
-}
+function wrapText(text,maxChars){const out=[];String(text??'').split(/\n/).forEach(part=>{let line='';for(const ch of part){if(line.length>=maxChars){out.push(line);line=''}line+=ch}out.push(line)});return out.length?out:['']}
 function makePaperImage(title,body,meta=''){
- const lines=wrapText(body,34);const lineH=42;const h=Math.max(260,170+lines.length*lineH);
+ const lines=wrapText(body,34),lineH=42,h=Math.max(260,170+lines.length*lineH);
  const tspans=lines.map((x,i)=>`<tspan x="80" dy="${i?lineH:0}">${xmlEscape(x)||' '}</tspan>`).join('');
- const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${h}" viewBox="0 0 1200 ${h}"><rect width="1200" height="${h}" rx="28" fill="#fffdf8"/><rect x="28" y="28" width="1144" height="${h-56}" rx="22" fill="none" stroke="#e7dcc5" stroke-width="3"/><text x="80" y="92" font-family="-apple-system,BlinkMacSystemFont,'Microsoft YaHei',sans-serif" font-size="32" font-weight="700" fill="#1d2a45">${xmlEscape(title)}</text><text x="80" y="130" font-family="-apple-system,BlinkMacSystemFont,'Microsoft YaHei',sans-serif" font-size="18" fill="#8a7657">${xmlEscape(meta||'考研数学 · 重点记忆')}</text><text x="80" y="190" font-family="-apple-system,BlinkMacSystemFont,'Microsoft YaHei',sans-serif" font-size="28" fill="#182338">${tspans}</text><line x1="80" y1="${h-48}" x2="1120" y2="${h-48}" stroke="#eee4d2"/><text x="80" y="${h-20}" font-family="-apple-system,BlinkMacSystemFont,'Microsoft YaHei',sans-serif" font-size="15" fill="#9a8b73">研数记忆 · 点击图片可放大</text></svg>`;
+ const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${h}" viewBox="0 0 1200 ${h}"><rect width="1200" height="${h}" rx="28" fill="#fffdf8"/><rect x="28" y="28" width="1144" height="${h-56}" rx="22" fill="none" stroke="#e7dcc5" stroke-width="3"/><text x="80" y="92" font-family="sans-serif" font-size="32" font-weight="700" fill="#1d2a45">${xmlEscape(title)}</text><text x="80" y="130" font-family="sans-serif" font-size="18" fill="#8a7657">${xmlEscape(meta||'考研数学 · 重点记忆')}</text><text x="80" y="190" font-family="sans-serif" font-size="28" fill="#182338">${tspans}</text><line x1="80" y1="${h-48}" x2="1120" y2="${h-48}" stroke="#eee4d2"/><text x="80" y="${h-20}" font-family="sans-serif" font-size="15" fill="#9a8b73">研数记忆 · 点击图片可放大</text></svg>`;
  return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg);
 }
-function paperImg(title,body,meta=''){const src=makePaperImage(title,body,meta);return `<img class="paper-img" src="${src}" alt="${escapeHtml(title)}" loading="lazy" onclick="openImageModal(this.src,'${escapeHtml(title).replace(/'/g,"\\'")}')"><div class="paper-tip">图片版 · 点击放大查看</div>`}
+function qImageUrl(q){
+ if(!q||!q.year||q.year<2009||q.year>2025)return '';
+ const m=String(q.label||'').match(/(\d+)/);if(!m)return '';
+ const n=Number(m[1]),key=`数学一_${q.year}_Q${String(n).padStart(2,'0')}`,meta=repoAnswers[key];if(!meta)return '';
+ return `${REPO_RAW}kaoyan_math_images/%E6%95%B0%E5%AD%A6%E4%B8%80/${q.year}/Q${String(n).padStart(2,'0')}_id${meta.question_id}.png`;
+}
+function paperImg(title,body,meta='',question=null){
+ const actual=qImageUrl(question),src=actual||makePaperImage(title,body,meta),badge=actual?'<span class="image-source-badge">真题原图</span>':'<span class="image-source-badge generated">图片版</span>',cap=escapeHtml(title).replace(/'/g,"\\'");
+ return `<div class="paper-wrap">${badge}<img class="paper-img" src="${src}" alt="${escapeHtml(title)}" loading="lazy" onclick="openImageModal(this.src,'${cap}')"><div class="paper-tip">${actual?'真题原图 · 点击放大 · 来源：公开 GitHub 资料库':'图片版 · 点击放大查看'}</div></div>`;
+}
 function openImageModal(src,caption=''){document.getElementById('imageModalImg').src=src;document.getElementById('imageCaption').textContent=caption+' · 点击任意位置关闭';document.getElementById('imageModal').classList.add('show');document.body.style.overflow='hidden'}
 function closeImageModal(){document.getElementById('imageModal').classList.remove('show');document.body.style.overflow=''}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeImageModal()});
 
+let currentSubject='全部';
+document.querySelectorAll('#knowledgeTabs .tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#knowledgeTabs .tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');currentSubject=b.dataset.sub;renderKnowledge()}));
 function renderKnowledge(){
  const s=(document.getElementById('kSearch').value||'').toLowerCase().trim();const t=document.getElementById('kType').value;
  let arr=baseCards.filter(c=>(currentSubject==='全部'||c.subject===currentSubject)&&(t==='all'||c.type===t));
  if(s)arr=arr.filter(c=>[c.title,c.formula,c.concept,(c.tags||[]).join(' ')].join(' ').toLowerCase().includes(s));
  const grid=document.getElementById('knowledgeGrid');grid.innerHTML='';if(!arr.length){grid.innerHTML='<div class="empty" style="grid-column:1/-1">没有匹配的知识卡。</div>';return}
- arr.forEach(c=>{const related=(c.questionIds||[]).map(id=>questions.find(q=>q.id===id)).filter(Boolean);const el=document.createElement('article');el.className='knowledge-card';el.innerHTML=`<div class="tagrow"><span class="badge">${c.subject}</span><span class="badge">${c.type==='formula'?'公式':c.type==='equiv'?'等价转换':'概念定义'}</span><span class="tiny" style="margin-left:auto">${getP(c.id).stage>=intervals.length-1?'已掌握':(isDue(c.id)?'今天复习':'未到期')}</span></div><h3>${escapeHtml(c.title)}</h3>${paperImg(c.title,c.formula||'',c.subject+' · '+(c.type==='formula'?'公式':c.type==='equiv'?'等价转换':'概念定义'))}<div class="snippet" style="margin-top:9px">${escapeHtml(c.concept||'')}</div><div class="chips" style="margin-top:10px">${(c.tags||[]).map(x=>`<span class="chip">${escapeHtml(x)}</span>`).join('')}</div><div style="margin-top:12px">${related.slice(0,3).map(q=>`<button class="linkbtn" onclick="showQuestion('${q.id}')">${q.year} · ${q.label}</button>`).join(' · ')}</div>`;grid.appendChild(el)})
+ arr.forEach(c=>{const related=(c.questionIds||[]).map(id=>questions.find(q=>q.id===id)).filter(Boolean);const el=document.createElement('article');el.className='knowledge-card';el.innerHTML=`<div class="tagrow"><span class="badge">${c.subject}</span><span class="badge">${c.type==='formula'?'公式':c.type==='equiv'?'等价转换':'概念定义'}</span><span class="tiny" style="margin-left:auto">${getP(c.id).stage>=intervals.length-1?'已掌握':(isDue(c.id)?'今天复习':'未到期')}</span></div><h3>${escapeHtml(c.title)}</h3>${paperImg(c.title,c.formula||c.concept||'',c.subject+' · '+(c.type==='formula'?'公式':c.type==='equiv'?'等价转换':'概念定义'))}<div class="snippet" style="margin-top:9px">${escapeHtml(c.concept||'')}</div><div class="chips" style="margin-top:10px">${(c.tags||[]).map(x=>`<span class="chip">${escapeHtml(x)}</span>`).join('')}</div><div style="margin-top:12px">${related.slice(0,3).map(q=>`<button class="linkbtn" onclick="showQuestion('${q.id}')">${q.year} · ${q.label}</button>`).join(' · ')}</div>`;grid.appendChild(el)})
 }
 
 function renderQuestions(){
@@ -449,7 +453,7 @@ function renderQuestions(){
  if(document.getElementById('qYear').options.length===1){[...new Set(questions.map(x=>x.year))].sort((a,b)=>b-a).forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v+'年';document.getElementById('qYear').appendChild(o)})}
  let arr=questions.filter(q=>(y==='all'||String(q.year)===String(y))&&(subj==='all'||q.subject===subj));if(s)arr=arr.filter(q=>[q.year,q.subject,q.label,q.title,q.stem,q.analysis,(q.tags||[]).join(' ')].join(' ').toLowerCase().includes(s));
  const box=document.getElementById('questionList');box.innerHTML='';if(!arr.length){box.innerHTML='<div class="empty">没有匹配的真题。</div>';return}
- arr.forEach(q=>{const el=document.createElement('article');el.className='question';el.id='question-'+q.id;el.innerHTML=`<div class="qtop"><div><span class="year">${q.year} 年</span> <span class="badge">${q.subject}</span> <span class="badge">${q.label}</span></div><div class="chips">${q.tags.map(x=>`<span class="chip">${escapeHtml(x)}</span>`).join('')}</div></div><div class="qtitle">${escapeHtml(q.title)}</div>${paperImg(q.year+'年 '+q.label,q.stem,q.subject+' · '+q.title)}<div class="analysis"><b>解析</b><br>${escapeHtml(q.analysis)}</div><div class="answer">参考答案/结论：${escapeHtml(q.answer)}</div>`;box.appendChild(el)})
+ arr.forEach(q=>{const el=document.createElement('article');el.className='question';el.id='question-'+q.id;el.innerHTML=`<div class="qtop"><div><span class="year">${q.year} 年</span> <span class="badge">${q.subject}</span> <span class="badge">${q.label}</span></div><div class="chips">${q.tags.map(x=>`<span class="chip">${escapeHtml(x)}</span>`).join('')}</div></div><div class="qtitle">${escapeHtml(q.title)}</div>${paperImg(q.year+'年 '+q.label,q.stem,q.subject+' · '+q.title,q)}<div class="analysis"><b>解析</b><br>${escapeHtml(q.analysis)}</div><div class="answer">参考答案/结论：${escapeHtml(q.answer)}</div>`;box.appendChild(el)})
 }
 function showQuestion(id){go('questions');setTimeout(()=>{const e=document.getElementById('question-'+id);if(e){e.scrollIntoView({behavior:'smooth',block:'start'});e.style.boxShadow='0 0 0 3px #dce3ff';setTimeout(()=>e.style.boxShadow='',900)}},60)}
 function renderSources(){
@@ -457,9 +461,10 @@ function renderSources(){
  const groups=[...new Set(sources.map(s=>s.group))];
  g.innerHTML=groups.map(group=>{
    const items=sources.filter(s=>s.group===group);
-   return `<div class="sourcegroup" style="grid-column:1/-1"><div style="display:flex;align-items:center;gap:8px;margin:6px 0 2px"><span class="badge">${escapeHtml(group)}</span><span class="tiny">${items.length} 份</span></div><div class="sourcegrid" style="margin-top:10px">${items.map(s=>{const actions=s.url?`<div class="sourceactions"><a class="sourcebtn primary" href="${encodeURI(s.url)}" target="_blank" rel="noopener">查看源资料</a></div>`:`<div class="sourceactions"><span class="sourcebtn disabled">源文件待托管</span></div>`;return `<div class="source ${s.warn?'warn':''}"><span class="status">${escapeHtml(s.status)}</span><h3>${escapeHtml(s.name)}</h3><div class="snippet">${escapeHtml(s.meta)}</div>${actions}<div class="sourcehint">公开链接仅在已确认可访问时提供；未托管的原始 PDF 不放失效链接。</div></div>`}).join('')}</div></div>`
+   return `<div class="sourcegroup" style="grid-column:1/-1"><div style="display:flex;align-items:center;gap:8px;margin:6px 0 2px"><span class="badge">${escapeHtml(group)}</span><span class="tiny">${items.length} 份</span></div><div class="sourcegrid" style="margin-top:10px">${items.map(s=>{const actions=`<div class="sourceactions">${s.url?`<a class="sourcebtn primary" href="${encodeURI(s.url)}" target="_blank" rel="noopener">查看源资料</a>`:'<span class="sourcebtn disabled">源文件待托管</span>'}${s.github?`<a class="sourcebtn" href="${encodeURI(s.github)}" target="_blank" rel="noopener">GitHub 文件页</a>`:''}</div>`;return `<div class="source ${s.warn?'warn':''}"><span class="status">${escapeHtml(s.status)}</span><h3>${escapeHtml(s.name)}</h3><div class="snippet">${escapeHtml(s.meta)}</div>${actions}<div class="sourcehint">原始资料入口与开源资料库分开标注；真题原图仅用于学习查看，版权归原作者/出题单位所有。</div></div>`}).join('')}</div></div>`
  }).join('')
 }
+
 function exportJSON(){const payload={cards:baseCards,questions,progress,target,exportedAt:new Date().toISOString()};document.getElementById('jsonArea').value=JSON.stringify(payload,null,2);toast('已把当前数据写入文本框')}
 function importJSON(){try{
   const data=JSON.parse(document.getElementById('jsonArea').value);let added=0;
@@ -473,7 +478,7 @@ function importJSON(){try{
 }catch(e){toast('JSON 格式有误，请检查');console.error(e)}}
 function resetProgress(){if(!confirm('确认只重置学习进度？知识卡和真题不会删除。'))return;progress={};save();renderDashboard();renderKnowledge();toast(currentUser?'学习进度已重置并同步':'学习进度已重置')}
 
-renderDashboard();renderKnowledge();renderQuestions();renderSources();initCloud();
+fetch(REPO_RAW+'kaoyan_math_images/%E6%95%B0%E5%AD%A6%E4%B8%80/answers.json').then(r=>r.ok?r.json():{}).then(data=>{repoAnswers=data||{};renderQuestions()}).catch(()=>{}); renderDashboard();renderKnowledge();renderQuestions();renderSources();initCloud();
 </script>
 </body>
 </html>
