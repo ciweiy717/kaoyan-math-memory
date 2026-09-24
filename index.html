@@ -423,8 +423,7 @@ let currentSubject='全部';
 document.querySelectorAll('#knowledgeTabs .tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#knowledgeTabs .tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');currentSubject=b.dataset.sub;renderKnowledge()}));
 function xmlEscape(s){return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;')}
 function wrapText(text,maxChars){
- const out=[];String(text??'').split(/\
-/).forEach(part=>{let line='';for(const ch of part){if(line.length>=maxChars){out.push(line);line=''}line+=ch}out.push(line)});return out.length?out:[''];
+ const out=[];String(text??'').split(/\n/).forEach(part=>{let line='';for(const ch of part){if(line.length>=maxChars){out.push(line);line=''}line+=ch}out.push(line)});return out.length?out:[''];
 }
 function makePaperImage(title,body,meta=''){
  const lines=wrapText(body,34);const lineH=42;const h=Math.max(260,170+lines.length*lineH);
